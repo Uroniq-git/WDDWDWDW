@@ -1,0 +1,17 @@
+[Unit] 
+Description=Telegram Bot 
+After=network.target
+
+[Service] 
+User=peps1phone
+Group=peps1phone
+
+WorkingDirectory=/home/peps1phone/bot/ 
+Environment="PYTHONPATH=/home/peps1phone/bot/" 
+ExecStart=/home/peps1phone/bot/.venv/bin/python /home/peps1phone/bot/main.py
+KillMode=process
+Restart=always
+RestartSec=5
+
+[Install] 
+WantedBy=multi-user.target
